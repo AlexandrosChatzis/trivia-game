@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import {
   handleScoreChange,
   handleCorrectAnswers,
+  handleTopScorers,
 } from "../redux/actions";
 import Nav from "../elements/Nav";
 import Error from "../elements/Error";
@@ -145,7 +146,11 @@ const Questions = () => {
         timerCountDom.classList.toggle("d-none");
         timerNeededDom.classList.toggle("d-none");
       } else {
-    
+        const mergedTopScorers = topscorers.concat({
+            username: username,
+            points: score,
+          });
+        dispatch(handleTopScorers(mergedTopScorers));
         navigate("/finalscore");
       }
     }, 2000);

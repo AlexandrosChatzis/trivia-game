@@ -7,9 +7,10 @@ import store from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // removing StrictMode in order not to render twice when we api call
+  // <React.StrictMode>
   <Provider store={store}>
     <App />
   </Provider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

@@ -52,7 +52,7 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 50px;
+  padding: 50px 0;
   min-height: 100vh;
 }
 .trivia-box {
@@ -206,20 +206,12 @@ h1 {
 }
 
 .btn.wrong {
-    /* animation-name: wrong;
-      animation-duration: 0.5s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out; */
     background-color: red;
   }
   .btn.wrong:hover {
     background-color: red;
   }
   .btn.correct {
-    /* animation-name: correct;
-      animation-duration: 0.5s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out; */
     background-color: green;
   }
   .btn.correct:hover {
@@ -426,8 +418,13 @@ input:focus {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    
   }
-
+  @media screen and (max-width: 500px) {
+    .question-answer {
+        height: 45px;
+    }
+  }
   
 .timer-wrapper {
     position: relative;
@@ -521,4 +518,43 @@ input:focus {
   .final-score-total strong {
     display: block;
     font-size: 30px;
+  }
+
+  .leaderboard-btn {
+    margin-top: 20px;
+  }
+
+  .top-scores {
+    margin: 20px auto 0;
+    display: inline-block;
+  }
+  
+  .trivia-list.top-scores li:before {
+    background-color: var(--black);
+  }
+  .trivia-list.top-scores li:first-of-type:before {
+    background-color: #ffd700;
+  }
+  .trivia-list.top-scores li:nth-of-type(2):before {
+    background-color: #c0c0c0;
+  }
+  .trivia-list.top-scores li:nth-of-type(3):before {
+    background-color: #cd7f32;
+  }
+  .top-score-item {
+    display: flex;
+    font-size: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    .top-score-item {
+      font-size: 18px;
+    }
+  }
+  .top-score-item:first-of-type {
+    font-weight: 700;
+    color: var(--red);
+  }
+
+  .d-none {
+    display: none;
   }
