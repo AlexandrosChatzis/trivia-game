@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   handleScoreChange,
+  handleCorrectAnswers,
 } from "../redux/actions";
 import Nav from "../elements/Nav";
 import Error from "../elements/Error";
@@ -107,7 +108,9 @@ const Questions = () => {
       if (timeNeeded > 0) {
         var points = points * timeNeeded;
       }
-   
+      dispatch(
+        handleCorrectAnswers([...correctAnswers, [question.difficulty, points]])
+      );
       dispatch(handleScoreChange(score + points));
     } else {
       e.target.classList.add("wrong");

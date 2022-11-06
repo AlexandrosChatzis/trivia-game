@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 import {
     handleUsernameChange,
     handleScoreChange,
-  } from "../redux/actions";
+    handleCorrectAnswers,
+} from "../redux/actions";
 
 const Welcome = () => {
   const { username } = useSelector((state) => state);
@@ -16,6 +17,7 @@ const Welcome = () => {
   useEffect(() => {
     dispatch(handleUsernameChange(""));
     dispatch(handleScoreChange(0));
+    dispatch(handleCorrectAnswers([]));
   }, []);
 
   const handleSubmit = (e) => {

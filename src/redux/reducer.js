@@ -1,8 +1,9 @@
-import { CHANGE_USERNAME, CHANGE_SCORE } from "./actionTypes";
+import { CHANGE_USERNAME, CHANGE_SCORE, CHANGE_CORRECT_ANSWERS } from "./actionTypes";
 
 const initialState = {
   username: '',
   score: 0,
+  correctAnswers : []
 };
 
 const reducer = (state = initialState, action) => {
@@ -16,6 +17,11 @@ const reducer = (state = initialState, action) => {
       return{
           ...state,
           score:action.payload
+      };
+      case CHANGE_CORRECT_ANSWERS: 
+      return{
+          ...state,
+          correctAnswers:action.payload
       };
       default:
           return state;
