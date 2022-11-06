@@ -3,7 +3,10 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { handleUsernameChange } from "../redux/actions";
+import {
+    handleUsernameChange,
+    handleScoreChange,
+  } from "../redux/actions";
 
 const Welcome = () => {
   const { username } = useSelector((state) => state);
@@ -12,6 +15,7 @@ const Welcome = () => {
 
   useEffect(() => {
     dispatch(handleUsernameChange(""));
+    dispatch(handleScoreChange(0));
   }, []);
 
   const handleSubmit = (e) => {
