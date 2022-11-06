@@ -1,7 +1,8 @@
-import { CHANGE_USERNAME } from "./actionTypes";
+import { CHANGE_USERNAME, CHANGE_SCORE } from "./actionTypes";
 
 const initialState = {
   username: '',
+  score: 0,
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const reducer = (state = initialState, action) => {
       return{
           ...state,
           username:action.payload
+      };
+      case CHANGE_SCORE: 
+      return{
+          ...state,
+          score:action.payload
       };
       default:
           return state;

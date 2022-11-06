@@ -205,6 +205,65 @@ h1 {
   width: 100%;
 }
 
+.btn.wrong {
+    /* animation-name: wrong;
+      animation-duration: 0.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out; */
+    background-color: red;
+  }
+  .btn.wrong:hover {
+    background-color: red;
+  }
+  .btn.correct {
+    /* animation-name: correct;
+      animation-duration: 0.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out; */
+    background-color: green;
+  }
+  .btn.correct:hover {
+    background-color: green;
+  }
+  .error-message {
+    color: red;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  @media screen and (max-width: 768px) {
+    .error-message {
+      font-size: 18px;
+    }
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .col-6 {
+    flex: 50%;
+    max-width: 50%;
+  }
+  .gap-10 {
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+  .gap-10 > * {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .mt-20 {
+    margin-top: 20px;
+  }
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    .col-md-12 {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
 .form-group {
   text-align: center;
   margin-top: 20px;
@@ -292,5 +351,127 @@ input:focus {
   }
   .leaderboard-icon:hover:before {
     background-image: url(../public/images/lead-white.svg);
+  }
+  
+
+  /* spinner */
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid var(--red);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--red) transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  
+.question {
+    text-align: center;
+  }
+  
+  .question-category {
+    margin-bottom: 20px;
+  }
+  .question-category span {
+    display: block;
+    font-weight: 400;
+  }
+  .question-index {
+    margin-bottom: 20px;
+  }
+  
+  .question-text {
+    margin-bottom: 20px;
+  }
+  .total-score {
+    display: block;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    .total-score {
+      font-size: 18px;
+    }
+  }
+  .question-answer {
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+.timer-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: white;
+    color: white;
+  }
+  .timer-circle {
+    border-radius: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: background-color 0.3s ease;
+  }
+  .timer-count,
+  .timer-needed {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: white;
+    color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
+  .timer-count {
+    z-index: 3;
+  }
+  .timer-needed {
+    z-index: 2;
   }
   

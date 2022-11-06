@@ -3,17 +3,17 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import {
-    handleUsernameChange,
-  } from "../redux/actions";
+import { handleUsernameChange } from "../redux/actions";
 
 const Welcome = () => {
   const { username } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(handleUsernameChange(""));
   }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username.trim().length > 0) {
@@ -22,6 +22,7 @@ const Welcome = () => {
       alert("Please fill up username to continue.");
     }
   };
+
   return (
     <div className="trivia-box-outer">
       <div className="trivia-box">
